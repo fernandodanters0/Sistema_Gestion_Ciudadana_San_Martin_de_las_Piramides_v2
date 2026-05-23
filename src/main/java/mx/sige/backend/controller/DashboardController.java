@@ -1,7 +1,7 @@
 package mx.sige.backend.controller;
 
-import mx.sige.backend.dto.ApiResponse;
-import mx.sige.backend.dto.DashboardMetrics;
+import mx.sige.backend.response.ApiResponse;
+import mx.sige.backend.dto.DashboardMetricas;
 import mx.sige.backend.repository.CiudadanoRepository;
 import mx.sige.backend.repository.PromotorRepository;
 import org.springframework.http.ResponseEntity;
@@ -21,11 +21,11 @@ public class DashboardController {
     }
 
     @GetMapping("/api/dashboard")
-    public ResponseEntity<ApiResponse<DashboardMetrics>> obtenerMetricas(@RequestParam Integer idOrganizacion) {
+    public ResponseEntity<ApiResponse<DashboardMetricas>> obtenerMetricas(@RequestParam Integer idOrganizacion) {
         long ciudadanos = ciudadanoRepo.countByIdOrganizacion(idOrganizacion);
         long promotores = promotorRepo.findByIdOrganizacion(idOrganizacion).size();
         long activos = promotorRepo.countByIdOrganizacionAndIdEstatus(idOrganizacion, (byte) 1);
-        DashboardMetrics metrics = new DashboardMetrics(ciudadanos, promotores, activos);
+        DashboardMetricas metrics = new DashboardMetricas(ciudadanos, promotores, activos);
         return ResponseEntity.ok(new ApiResponse<>(true, "Métricas del dashboard", metrics));
     }
 }

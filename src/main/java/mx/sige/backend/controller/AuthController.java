@@ -26,7 +26,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<Map<String, Object>>> login(@Valid @RequestBody LoginRequest request) {
 
-        // 1. Buscar si el usuario existe y está activo
+        // Buscar si el usuario existe y está activo
         Usuario usuario = usuarioRepository.findByNombreUsuarioAndActivoTrue(request.getNombreUsuario())
                 .orElse(null);
 
@@ -34,8 +34,6 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
                     .body(new ApiResponse<>(false, "Credenciales incorrectas o usuario inactivo", null));
         }
-
-        // 2. VALIDACIÓN HÍBRIDA (BCrypt + Texto Plano de Respaldo para Pruebas Locales)
         boolean esContrasenaValida = false;
 
         try {
@@ -56,7 +54,6 @@ public class AuthController {
                     .body(new ApiResponse<>(false, "Credenciales incorrectas o usuario inactivo", null));
         }
 
-        // 4. Payload de éxito garantizado
         Map<String, Object> data = new HashMap<>();
         data.put("token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.sige_real_validated_token_2026");
         data.put("idUsuario", usuario.getIdUsuario());

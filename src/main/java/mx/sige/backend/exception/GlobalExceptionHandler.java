@@ -1,6 +1,6 @@
 package mx.sige.backend.exception;
 
-import mx.sige.backend.dto.ApiResponse;
+import mx.sige.backend.response.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -22,13 +22,13 @@ public class GlobalExceptionHandler {
             errors.put(fieldName, errorMessage);
         });
         ApiResponse<Void> response = new ApiResponse<>(false, "Error de validación: revisa los campos enviados",
-                errors);
+                null, errors);
         return ResponseEntity.badRequest().body(response);
     }
 
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<ApiResponse<Void>> handleBusinessExceptions(IllegalArgumentException ex) {
-        ApiResponse<Void> response = new ApiResponse<>(false, ex.getMessage(), (Map<String, String>) null);
+        ApiResponse<Void> response = new ApiResponse<>(false, ex.getMessage(), null, null);
         return ResponseEntity.badRequest().body(response);
     }
 }

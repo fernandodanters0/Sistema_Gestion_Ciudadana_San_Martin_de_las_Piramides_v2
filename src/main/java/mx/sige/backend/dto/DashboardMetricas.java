@@ -1,11 +1,11 @@
 package mx.sige.backend.dto;
 
-public class DashboardMetrics {
+public class DashboardMetricas {
     private long totalCiudadanos;
     private long totalPromotores;
     private long promotoresActivos;
 
-    public DashboardMetrics(long totalCiudadanos, long totalPromotores, long promotoresActivos) {
+    public DashboardMetricas(long totalCiudadanos, long totalPromotores, long promotoresActivos) {
         this.totalCiudadanos = totalCiudadanos;
         this.totalPromotores = totalPromotores;
         this.promotoresActivos = promotoresActivos;

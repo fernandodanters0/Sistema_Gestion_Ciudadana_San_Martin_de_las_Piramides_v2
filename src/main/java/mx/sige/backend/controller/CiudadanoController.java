@@ -1,7 +1,7 @@
 package mx.sige.backend.controller;
 
 import jakarta.validation.Valid;
-import mx.sige.backend.dto.ApiResponse;
+import mx.sige.backend.response.ApiResponse;
 import mx.sige.backend.model.Ciudadano;
 import mx.sige.backend.repository.CiudadanoRepository;
 import org.springframework.http.ResponseEntity;

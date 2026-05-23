@@ -1,6 +1,6 @@
 package mx.sige.backend.controller;
 
-import mx.sige.backend.dto.ApiResponse;
+import mx.sige.backend.response.ApiResponse;
 import mx.sige.backend.model.Actividad;
 import mx.sige.backend.repository.ActividadRepository;
 import org.springframework.http.ResponseEntity;
