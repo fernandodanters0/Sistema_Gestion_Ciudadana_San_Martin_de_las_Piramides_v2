@@ -13,7 +13,7 @@ Este repositorio contiene la API REST core de **SIGE**, un sistema artesanal y d
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 La arquitectura del software sigue un diseño multicapa desacoplado de forma manual y limpia:
 
