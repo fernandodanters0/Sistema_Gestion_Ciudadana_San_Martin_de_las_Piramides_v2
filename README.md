@@ -1,8 +1,8 @@
 # SIGE — Backend (Sistema Integral de Gestión Electoral)
 
-Este repositorio contiene la API REST core de **SIGE**, un sistema artesanal y de alto rendimiento diseñado para la gestión ciudadana, coordinación de promotores en campo, asignaciones territoriales y seguimiento de actividades electorales. El sistema implementa un esquema arquitectónico multi-inquilino (*multi-tenant*) basado estrictamente en el identificador de organización (`idOrganizacion`).
+Este repositorio contiene la API REST core de **SIGE**, un sistema artesanal y de alto rendimiento diseñado para la gestión ciudadana, coordinación de promotores en campo, asignaciones territoriales y seguimiento de actividades electorales.
 
-## 🛠️ Stack Tecnológico
+## Tecnologias presentes en el proyecto
 
 * **Java 21** (JDK 21)
 * **Spring Boot 3.2.5**
